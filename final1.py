@@ -52,7 +52,7 @@ def submit():
    du=frame44_btn.get()
    tup=(cu,du)
    import mysql.connector as sqltor
-   con_obj=sqltor.connect(host="localhost",user="root",passwd="SkyBlue@2021",database="comproj12")
+   con_obj=sqltor.connect(host="localhost",user="root",passwd="Your password",database="comproj12")
    st="SELECT user_name,password FROM users"
    cursor=con_obj.cursor()
    cursor.execute(st)
@@ -82,7 +82,7 @@ frame5_title=tk.Label(frame5,text='Sign-in Page',bg='deeppink')
 frame5_title.pack(fill='x')
 frame5_btn=tk.Button(frame5,text='Back to home page',command=lambda:show_frame(frame1))
 import mysql.connector as sqltor
-con_obj=sqltor.connect(host="localhost",user="root",passwd="SkyBlue@2021",database="comproj12")
+con_obj=sqltor.connect(host="localhost",user="root",passwd="Your password",database="comproj12")
 sb=tk.StringVar()
 sc=tk.StringVar()
 se=tk.StringVar()
@@ -154,7 +154,7 @@ sub0_btn.pack()
 frame6_title=tk.Label(frame6,text='Add Book !',bg='deeppink')
 frame6_title.pack(fill='x')
 import mysql.connector as sqltor
-con_obj=sqltor.connect(host="localhost",user="root",passwd="SkyBlue@2021",database="comproj12")
+con_obj=sqltor.connect(host="localhost",user="root",passwd="Your password",database="comproj12")
 a=tk.StringVar()
 b=tk.StringVar()
 c=tk.StringVar()
@@ -317,7 +317,7 @@ def search1(x):
       btt=m2.get()
       length=len(btt)
       import mysql.connector as sqltor
-      con_obj=sqltor.connect(host="localhost",user="root",passwd="SkyBlue@2021",database="comproj12")
+      con_obj=sqltor.connect(host="localhost",user="root",passwd="Your password",database="comproj12")
       cursor=con_obj.cursor()
       st2="SELECT * FROM BOOK_DETAILS WHERE TITLE LIKE '{}'".format(btt+'%')
       cursor.execute(st2)
@@ -335,7 +335,7 @@ def search1(x):
       bta=m4.get()
       length=len(bta)
       import mysql.connector as sqltor
-      con_obj=sqltor.connect(host="localhost",user="root",passwd="SkyBlue@2021",database="comproj12")
+      con_obj=sqltor.connect(host="localhost",user="root",passwd="Your password",database="comproj12")
       cursor=con_obj.cursor()
       st2="SELECT * FROM BOOK_DETAILS WHERE AUTHOR LIKE '{}'".format(bta+'%')
       cursor.execute(st2)
@@ -385,7 +385,7 @@ Book_code3=tk.StringVar()
 def submit3():
    token=m41.get()
    import mysql.connector as sqltor
-   con_obj=sqltor.connect(host="localhost",user="root",passwd="SkyBlue@2021",database="comproj12")
+   con_obj=sqltor.connect(host="localhost",user="root",passwd="Your password",database="comproj12")
    cursor=con_obj.cursor()
    st="DELETE FROM BOOK_DETAILS WHERE BOOK_CODE='{}'".format(token)
    cursor.execute(st)
@@ -464,7 +464,7 @@ frf10.pack()
 frg5=tk.Button(frame15,text='Back',command=lambda:show_frame(frame9))
 frg5.pack()
 import mysql.connector as sqltor
-con_obj=sqltor.connect(host="localhost",user="root",passwd="SkyBlue@2021",database="comproj12")
+con_obj=sqltor.connect(host="localhost",user="root",passwd="Your password",database="comproj12")
 pa=tk.StringVar()
 pb=tk.StringVar()
 pd=tk.StringVar()
@@ -541,7 +541,7 @@ memid=tk.StringVar()
 def submit5():
    jd=m162.get()
    import mysql.connector as sqltor
-   con_obj=sqltor.connect(host="localhost",user="root",passwd="SkyBlue@2021",database="comproj12")
+   con_obj=sqltor.connect(host="localhost",user="root",passwd="Your password",database="comproj12")
    cursor=con_obj.cursor()
    st="DELETE FROM MEMBER WHERE Member_ID='{}'".format(jd)
    cursor.execute(st)
@@ -576,13 +576,13 @@ def submit6():
    yb=nbe.get()
    yc=nce.get()
    import mysql.connector as sqltor
-   con_obj=sqltor.connect(host="localhost",user="root",passwd="SkyBlue@2021",database="comproj12")
+   con_obj=sqltor.connect(host="localhost",user="root",passwd="Your password",database="comproj12")
    cursor=con_obj.cursor()
    st2="SELECT Return_Date FROM issue_return WHERE Book_ID='{}'".format(yc)
    cursor.execute(st2)
    data1=cursor.fetchall()
    if data1==[]:  
-      con_obj=sqltor.connect(host="localhost",user="root",passwd="SkyBlue@2021",database="comproj12")
+      con_obj=sqltor.connect(host="localhost",user="root",passwd="Your password",database="comproj12")
       st="INSERT INTO ISSUE_RETURN(Membership_ID,Book_ID,Issue_date,Due_date,Return_date,Charges,Fine) VALUES('{}','{}','{}','{}','{}',{},{})".format(yb,yc,nd,ne,nf,ng,nh)
       cursor=con_obj.cursor()
       cursor.execute(st)
@@ -595,7 +595,7 @@ def submit6():
             messagebox.showinfo("Message", "Book cannot be issued!")
             break
          if (None,) not in data1:
-            con_obj=sqltor.connect(host="localhost",user="root",passwd="SkyBlue@2021",database="comproj12")
+            con_obj=sqltor.connect(host="localhost",user="root",passwd="Your password",database="comproj12")
             st="INSERT INTO ISSUE_RETURN(Membership_ID,Book_ID,Issue_date,Due_date,Return_date,Charges,Fine) VALUES('{}','{}','{}','{}','{}',{},{})".format(yb,yc,nd,ne,nf,ng,nh)
             cursor=con_obj.cursor()
             cursor.execute(st)
@@ -636,7 +636,7 @@ cat=tk.StringVar()
 def submit7():
    yd=cae.get()
    import mysql.connector as sqltor
-   con_obj=sqltor.connect(host="localhost",user="root",passwd="SkyBlue@2021",database="comproj12")
+   con_obj=sqltor.connect(host="localhost",user="root",passwd="Your password",database="comproj12")
    if con_obj.is_connected():
       print("Succesfully connected to MySql dtabase")
    cursor=con_obj.cursor()
@@ -689,7 +689,7 @@ frame19_btn=tk.Button(frame19,text='Display each row/data from the users table',
 frame19_btn.pack()
 def check(username,password):
    import mysql.connector as sqltor
-   con_obj=sqltor.connect(host="localhost",user="root",passwd="SkyBlue@2021",database="comproj12")
+   con_obj=sqltor.connect(host="localhost",user="root",passwd="Your password",database="comproj12")
    cursor=con_obj.cursor()
    st="SELECT user_type from users WHERE user_name= '{}' and password ='{}'".format(username,password)
    cursor.execute(st)
@@ -712,7 +712,7 @@ def submit8():
    du=frame192_btn.get()
    tup=(cu,du)
    import mysql.connector as sqltor
-   con_obj=sqltor.connect(host="localhost",user="root",passwd="SkyBlue@2021",database="comproj12")
+   con_obj=sqltor.connect(host="localhost",user="root",passwd="Your password",database="comproj12")
    st="SELECT user_name,password FROM users"
    cursor=con_obj.cursor()
    cursor.execute(st)
@@ -758,7 +758,7 @@ def search_user(n):
       import tkinter as tk
       vt=frame211_btn.get()
       import mysql.connector as sqltor
-      con_obj=sqltor.connect(host="localhost",user="root",passwd="SkyBlue@2021",database="comproj12")
+      con_obj=sqltor.connect(host="localhost",user="root",passwd="Your password",database="comproj12")
       st="SELECT * FROM users WHERE user_type= '{}'".format(vt)
       cursor=con_obj.cursor()
       cursor.execute(st)
@@ -771,7 +771,7 @@ def search_user(n):
       import tkinter as tk
       vr=frame221_btn.get()
       import mysql.connector as sqltor
-      con_obj=sqltor.connect(host="localhost",user="root",passwd="SkyBlue@2021",database="comproj12")
+      con_obj=sqltor.connect(host="localhost",user="root",passwd="Your password",database="comproj12")
       st="SELECT * FROM users WHERE user_name= '{}'".format(vr)
       cursor=con_obj.cursor()
       cursor.execute(st)
@@ -791,7 +791,7 @@ def newcheck():
    qq=frame201_btn.get()
    ii=frame202_btn.get()
    import mysql.connector as sqltor
-   con_obj=sqltor.connect(host="localhost",user="root",passwd="SkyBlue@2021",database="comproj12")
+   con_obj=sqltor.connect(host="localhost",user="root",passwd="Your password",database="comproj12")
    cursor=con_obj.cursor()
    st="SELECT user_type from users WHERE user_name= '{}' and password ='{}'".format(qq,ii)
    cursor.execute(st)
