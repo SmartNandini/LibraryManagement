@@ -11,7 +11,8 @@ Project Requirements:
   
 3) Install mysql connector library
    
-    pip install mysql-connector-python
+        pip install mysql-connector-python
+
 
    
 The following tables are made inside the mysql database named comproj12
